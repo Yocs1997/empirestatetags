@@ -81,7 +81,7 @@ export default function RootLayout({
               <ul className="space-y-2 text-sm text-gray-300">
                 <li><Link href="#services" className="hover:text-white transition">Our Services</Link></li>
                 <li><Link href="#how-it-works" className="hover:text-white transition">How It Works</Link></li>
-                <li><Link href="#" className="hover:text-white transition">Privacy Policy</Link></li>
+                <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
               </ul>
             </div>
             <div>
