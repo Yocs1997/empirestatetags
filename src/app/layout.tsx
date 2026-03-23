@@ -89,7 +89,7 @@ export default function RootLayout({
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>Email: support@empirestatetags.com</li>
                 <li>Phone: (347) 424-4569</li>
-                <li>Location: 30-10 41st Ave, Gasteria Works, suite 224, Long Island City 11101.</li>
+                <li>Location: 30-10 41st Ave, Gasteria Works, suite 224, Long Island City 11101, NY.</li>
               </ul>
             </div>
           </div>
