@@ -52,7 +52,7 @@ export default function Home() {
             <div className="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition bg-gray-50">
               <div className="w-12 h-12 bg-empire-blue text-white rounded-lg flex items-center justify-center text-2xl mb-6">🗽</div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">NY Resident Specialists</h3>
-              <p className="text-gray-600">New York DMV can be notoriously difficult. We have tailored workarounds specifically designed to help NY drivers get tagged.</p>
+              <p className="text-gray-600">New York DMV can be notoriously difficult. We have tailored strategies specifically designed to help NY drivers get tagged.</p>
             </div>
             <div className="p-8 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition bg-gray-50">
               <div className="w-12 h-12 bg-empire-blue text-white rounded-lg flex items-center justify-center text-2xl mb-6">🛡️</div>
