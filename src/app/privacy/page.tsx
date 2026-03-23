@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
             <ul className="font-semibold text-gray-900">
               <li>Empire State Tags</li>
               <li>Email: <a href="mailto:support@empirestatetags.com" className="text-empire-blue hover:underline">support@empirestatetags.com</a></li>
-              <li>Phone: (555) 123-4567</li>
+              <li>Phone:  (347) 424-4569</li>
             </ul>
           </section>
 
