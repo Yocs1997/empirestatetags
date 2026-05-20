@@ -1,3 +1,4 @@
+import VideoSection from "./components/VideoSection";
 export default function Home() {
   const specificServices = [
     "Rebuilt Titles",
@@ -86,7 +87,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
             
             <div className="flex items-start gap-4">
-              <div className="text-green-400 mt-1 flex-shrink-0">
+              <div className="text-green-400 mt-1 shrink-0">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <div>
@@ -96,7 +97,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="text-green-400 mt-1 flex-shrink-0">
+              <div className="text-green-400 mt-1 shrink-0">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <div>
@@ -106,7 +107,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="text-green-400 mt-1 flex-shrink-0">
+              <div className="text-green-400 mt-1 shrink-0">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <div>
@@ -116,7 +117,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="text-green-400 mt-1 flex-shrink-0">
+              <div className="text-green-400 mt-1 shrink-0">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <div>
@@ -126,7 +127,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-start gap-4 md:col-span-2 md:w-1/2 md:mx-auto">
-              <div className="text-green-400 mt-1 flex-shrink-0">
+              <div className="text-green-400 mt-1 shrink-0">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <div>
@@ -151,7 +152,7 @@ export default function Home() {
               <p className="text-gray-600 text-sm">Contact us with your specific registration hurdles.</p>
             </div>
 
-            <div className="hidden md:block w-8 border-t-2 border-dashed border-empire-blue flex-shrink-0"></div>
+            <div className="hidden md:block w-8 border-t-2 border-dashed border-empire-blue shrink-0"></div>
 
             <div className="bg-white p-8 rounded-xl shadow-md flex-1 text-center relative z-10 w-full">
               <div className="w-10 h-10 bg-empire-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 absolute -top-5 left-1/2 transform -translate-x-1/2">2</div>
@@ -159,7 +160,7 @@ export default function Home() {
               <p className="text-gray-600 text-sm">We process your paperwork for an out-of-state title and tag.</p>
             </div>
 
-            <div className="hidden md:block w-8 border-t-2 border-dashed border-empire-blue flex-shrink-0"></div>
+            <div className="hidden md:block w-8 border-t-2 border-dashed border-empire-blue shrink-0"></div>
 
             <div className="bg-white p-8 rounded-xl shadow-md flex-1 text-center relative z-10 w-full">
               <div className="w-10 h-10 bg-empire-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 absolute -top-5 left-1/2 transform -translate-x-1/2">3</div>
@@ -170,6 +171,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <VideoSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50 text-center">
