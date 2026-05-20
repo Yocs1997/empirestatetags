@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+  <head>
+    <Script
+      id="facebook-pixel"
+      strategy="afterInteractive"
+    >
+      {`
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '2042979196640048');
+        fbq('track', 'PageView');
+      `}
+    </Script>
+  </head>
       <body className={`${inter.className} flex flex-col min-h-screen bg-gray-50 text-gray-900`}>
+        <noscript>
+  <img
+    height="1"
+    width="1"
+    style={{ display: "none" }}
+    src="https://www.facebook.com/tr?id=2042979196640048&ev=PageView&noscript=1"
+  />
+</noscript>
         {/* Navigation Bar */}
         <header className="bg-white shadow-sm sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
