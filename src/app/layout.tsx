@@ -69,7 +69,7 @@ export default function RootLayout({
               <Link href="#contact" className="hover:text-empire-blue transition">Contact</Link>
             </nav>
             <a href="tel:347 424 4569" className="bg-empire-blue text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition">
-              Call Now 347-424-4569
+              Call Now (347) 424-4569
             </a>
           </div>
         </header>
