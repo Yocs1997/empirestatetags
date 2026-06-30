@@ -68,14 +68,14 @@ export default function RootLayout({
               <Link href="#how-it-works" className="hover:text-empire-blue transition">How it Works</Link>
               <Link href="#contact" className="hover:text-empire-blue transition">Contact</Link>
             </nav>
-            <a href="#contact" className="bg-empire-blue text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition">
-              Get Started
+            <a href="tel:347 424 4569" className="bg-empire-blue text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition">
+              Call Now 347-424-4569
             </a>
           </div>
         </header>
 
         {/* Main Content Area */}
-        <main className="flex-grow">
+        <main className="grow">
           {children}
         </main>
 

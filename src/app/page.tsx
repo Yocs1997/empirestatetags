@@ -178,8 +178,8 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 bg-empire-blue text-white p-12 rounded-2xl shadow-xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to solve your registration headaches?</h2>
           <p className="text-lg text-blue-100 mb-8">Reach out to our team today. We'll review your case and get you set up with valid tags and insurance.</p>
-          <a href="https://empiretagsnyc.com/" className="inline-block bg-white text-empire-blue px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg">
-            Contact Us Now
+          <a href="tel:347 424 4569" className="inline-block bg-white text-empire-blue px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+            Call Us Now
           </a>
         </div>
       </section>
