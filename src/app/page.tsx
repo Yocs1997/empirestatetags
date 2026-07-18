@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import VideoSection from "./components/VideoSection";
+
 export default function Home() {
   const specificServices = [
     "Rebuilt Titles",
@@ -7,6 +11,16 @@ export default function Home() {
     "Replacement Plates",
     "Regular Titles"
   ];
+
+  // State to track if the form was successfully submitted
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Later on, you can add your Supabase/API logic here.
+    // For now, it immediately switches to the completion view.
+    setSubmitted(true);
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -21,10 +35,10 @@ export default function Home() {
               Having issues registering your vehicle in your home state? We specialize in out-of-state tags and comprehensive insurance solutions, tailored especially for New York residents.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#contact" className="bg-empire-blue text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-800 transition shadow-lg">
+              <a href="#contact" className="bg-empire-blue text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-800 transition shadow-lg text-center">
                 Get Your Tags
               </a>
-              <a href="#services" className="bg-white text-empire-blue border-2 border-empire-blue px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-50 transition">
+              <a href="#services" className="bg-white text-empire-blue border-2 border-empire-blue px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-50 transition text-center">
                 Learn More
               </a>
             </div>
@@ -62,7 +76,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Types of Services (New Section) */}
+          {/* Types of Services */}
           <div className="text-center border-t border-gray-100 pt-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Types of Registrations We Handle</h3>
             <div className="flex flex-wrap justify-center gap-4">
@@ -76,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Work With Us (New Section) */}
+      {/* Why Work With Us */}
       <section className="py-20 bg-empire-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -85,7 +99,6 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
-            
             <div className="flex items-start gap-4">
               <div className="text-green-400 mt-1 shrink-0">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
@@ -135,7 +148,6 @@ export default function Home() {
                 <p className="text-blue-100 text-sm">If you have missing documents, our team will guide you on exactly how to get them to expedite your process.</p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -145,7 +157,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-empire-blue mb-16">How It Works</h2>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 relative">
-            
             <div className="bg-white p-8 rounded-xl shadow-md flex-1 text-center relative z-10 w-full">
               <div className="w-10 h-10 bg-empire-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 absolute -top-5 left-1/2 transform -translate-x-1/2">1</div>
               <h4 className="font-bold text-lg mb-2 mt-4">Consultation</h4>
@@ -167,20 +178,128 @@ export default function Home() {
               <h4 className="font-bold text-lg mb-2 mt-4">Hit the Road</h4>
               <p className="text-gray-600 text-sm">Receive your new plates and insurance documents securely.</p>
             </div>
-
           </div>
         </div>
       </section>
+      
       <VideoSection />
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 text-center">
-        <div className="max-w-3xl mx-auto px-4 bg-empire-blue text-white p-12 rounded-2xl shadow-xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to solve your registration headaches?</h2>
-          <p className="text-lg text-blue-100 mb-8">Reach out to our team today. We'll review your case and get you set up with valid tags and insurance.</p>
-          <a href="tel:347 424 4569" className="inline-block bg-white text-empire-blue px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg">
-            Call Us Now
-          </a>
+      <section id="contact" className="py-20 bg-gray-50 text-left">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-empire-blue text-white p-8 md:p-12 rounded-2xl shadow-xl transition-all duration-300">
+            
+            {/* Standard layout shows if the form hasn't been submitted yet */}
+            {!submitted ? (
+              <>
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to solve your registration headaches?</h2>
+                  <p className="text-lg text-blue-100">
+                    Reach out to our team today. Fill out the form below and we will get right back to you.
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-5 text-gray-900">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-blue-100 mb-1">First Name</label>
+                      <input
+                        type="text"
+                        name="firstName"
+                        required
+                        className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-blue-100 mb-1">Last Name</label>
+                      <input
+                        type="text"
+                        name="lastName"
+                        required
+                        className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+                        placeholder="Doe"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-blue-100 mb-1">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-blue-100 mb-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+                      placeholder="(123) 456-7890"
+                    />
+                  </div>
+
+                  {/* Legal Marketing Disclaimer */}
+                  <div className="flex items-start gap-3 pt-2">
+                    <input
+                      type="checkbox"
+                      id="marketingConsent"
+                      name="marketingConsent"
+                      required
+                      className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer shrink-0"
+                    />
+                    <label htmlFor="marketingConsent" className="text-xs sm:text-sm text-blue-100 select-none cursor-pointer leading-tight">
+                      By providing your info, you agree to receive calls, emails, or SMS for marketing purposes and understand that you can unsubscribe at any time.
+                    </label>
+                  </div>
+
+                  <div className="text-center pt-4">
+                    <button
+                      type="submit"
+                      className="w-full bg-white text-empire-blue px-10 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg"
+                    >
+                      Submit Details
+                    </button>
+                  </div>
+                </form>
+
+                {/* Direct Phone Backup Option */}
+                <div className="mt-8 pt-6 border-t border-blue-800 text-center">
+                  <p className="text-sm text-blue-200 mb-2">Prefer to speak directly?</p>
+                  <a href="tel:3474244569" className="text-white hover:underline font-bold text-lg">
+                    📞 Call Us Now: 347 424 4569
+                  </a>
+                </div>
+              </>
+            ) : (
+              /* Success Screen Content */
+              <div className="text-center py-8 px-4 flex flex-col items-center justify-center space-y-6 animate-fadeIn">
+                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-4xl mb-2">
+                  ✓
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold">Thank You!</h2>
+                <p className="text-xl text-blue-100 max-w-xl mx-auto leading-relaxed">
+                  Thanks for submitting the form, we'll get back to you shortly.
+                </p>
+                <div className="pt-4 border-t border-blue-800 w-full max-w-md">
+                  <p className="text-sm text-blue-200 mb-3">Need help quicker?</p>
+                  <a 
+                    href="tel:3474244569" 
+                    className="inline-flex items-center gap-2 bg-white text-empire-blue px-8 py-4 rounded-md font-bold text-xl hover:bg-gray-100 transition shadow-xl"
+                  >
+                    📞 Call Us: 347 424 4569
+                  </a>
+                </div>
+              </div>
+            )}
+
+          </div>
         </div>
       </section>
     </div>
