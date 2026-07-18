@@ -12,13 +12,10 @@ export default function Home() {
     "Regular Titles"
   ];
 
-  // State to track if the form was successfully submitted
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Later on, you can add your Supabase/API logic here.
-    // For now, it immediately switches to the completion view.
     setSubmitted(true);
   };
 
@@ -184,12 +181,11 @@ export default function Home() {
       
       <VideoSection />
 
-      {/* Contact Section */}
+      {/* Contact Section - Main outer container holding id="contact" permanently */}
       <section id="contact" className="py-20 bg-gray-50 text-left">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-empire-blue text-white p-8 md:p-12 rounded-2xl shadow-xl transition-all duration-300">
             
-            {/* Standard layout shows if the form hasn't been submitted yet */}
             {!submitted ? (
               <>
                 <div className="text-center mb-8">
@@ -269,7 +265,6 @@ export default function Home() {
                   </div>
                 </form>
 
-                {/* Direct Phone Backup Option */}
                 <div className="mt-8 pt-6 border-t border-blue-800 text-center">
                   <p className="text-sm text-blue-200 mb-2">Prefer to speak directly?</p>
                   <a href="tel:3474244569" className="text-white hover:underline font-bold text-lg">
