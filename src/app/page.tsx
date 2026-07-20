@@ -251,8 +251,25 @@ export default function Home() {
                       className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer shrink-0"
                     />
                     <label htmlFor="marketingConsent" className="text-xs sm:text-sm text-blue-100 select-none cursor-pointer leading-tight">
-                      By providing your info, you agree to receive calls, emails, or SMS for marketing purposes and understand that you can unsubscribe at any time.
-                    </label>
+  By signing up, you agree to receive recurring text messages for appointment reminders, confirmations, marketing texts from Empire State Tags at the cell number used when signing up. Consent is not a condition of any purchase. Msg & data rates may apply. Message frequency varies. Text HELP for help, STOP to cancel. View our{" "}
+  <a 
+    href="https://www.empirestatetags.com/privacy" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="underline hover:text-white font-semibold"
+  >
+    Privacy Policy
+  </a>{" "}
+  and{" "}
+  <a 
+    href="#" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="underline hover:text-white font-semibold"
+  >
+    Terms
+  </a>.
+</label>
                   </div>
 
                   <div className="text-center pt-4">
